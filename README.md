@@ -10,7 +10,6 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
  principaux composants:
 
  - **Chat.jsx**
- - 
  Gère l'affichage des messages de la conversation en temps réel et permet aux utilisateurs d'envoyer de nouveaux messages. Utilise Firebase Firestore pour stocker et récupérer les messages, et offre des fonctionnalités comme l'ajout d'emojis et d'images aux messages.
  
  - **Detail.jsx**
