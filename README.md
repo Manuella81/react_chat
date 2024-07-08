@@ -2,6 +2,7 @@
 Bienvenue dans **react_app**, une application fictive de messagerie construite avec React.js et Firebase. Cette application permet aux utilisateurs de communiquer en temps réel via des messages textuels, tout en offrant des fonctionnalités avancées telles que l'authentification sécurisée par email et mot de passe, le stockage de fichiers, et la gestion des données utilisateur avec Cloud Firestore.
 
 **STRUCTURE DU PROJET**
+
 **Dossier public** : Contient les ressources statiques comme les images et les icônes utilisées dans l'application.
 
 
