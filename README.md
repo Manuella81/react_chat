@@ -7,26 +7,25 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
 
 **Dossier src/components** : Chaque composant est structuré avec un fichier JSX et un fichier CSS pour le style, facilitant la maintenance et l'organisation du code.
 
-    **Principaux composants**
+ **Principaux composants**
 
-    **Chat.jsx**
-    Gère l'affichage des messages de la conversation en temps réel et permet aux utilisateurs d'envoyer de nouveaux messages. Utilise Firebase Firestore pour stocker et récupérer les messages, et offre des fonctionnalités comme l'ajout d'emojis et d'images aux messages.
-    
-    **Detail.jsx**
-    Affiche la politique de confidentialité et les photos partagées dans la conversation en cours. Inclut une fonctionnalité pour bloquer/débloquer un utilisateur dans la conversation via Firebase Firestore.
-    
-    **Login.jsx**
-    Gère l'authentification des utilisateurs à l'application. Utilise Firebase pour les opérations d'inscription (createUserWithEmailAndPassword) et de connexion (signInWithEmailAndPassword), ainsi que Firestore pour la gestion des données utilisateur.
-    
-    **List.jsx**
-    Un conteneur pour les sous-composants UserInfo et ChatList. ChatList.jsx affiche en temps réel la liste des chats de l'utilisateur.
-    
-    **AddUser.jsx**
-    Permet aux utilisateurs de rechercher et d'ajouter d'autres utilisateurs dans l'application, en utilisant Firebase Firestore pour la gestion des utilisateurs et des chats.
-    
-    **Notification.jsx**
-    Affiche les notifications toast utilisant react-toastify pour une expérience utilisateur améliorée.
-
+ - **Chat.jsx**
+ Gère l'affichage des messages de la conversation en temps réel et permet aux utilisateurs d'envoyer de nouveaux messages. Utilise Firebase Firestore pour stocker et récupérer les messages, et offre des fonctionnalités comme l'ajout d'emojis et d'images aux messages.
+ 
+ - **Detail.jsx**
+ Affiche la politique de confidentialité et les photos partagées dans la conversation en cours. Inclut une fonctionnalité pour bloquer/débloquer un utilisateur dans la conversation via Firebase Firestore.
+ 
+ - **Login.jsx**
+ Gère l'authentification des utilisateurs à l'application. Utilise Firebase pour les opérations d'inscription (createUserWithEmailAndPassword) et de connexion (signInWithEmailAndPassword), ainsi que Firestore pour la gestion des données utilisateur.
+ 
+ - **List.jsx**
+ Un conteneur pour les sous-composants UserInfo et ChatList. ChatList.jsx affiche en temps réel la liste des chats de l'utilisateur.
+ 
+ - **AddUser.jsx**
+ Permet aux utilisateurs de rechercher et d'ajouter d'autres utilisateurs dans l'application, en utilisant Firebase Firestore pour la gestion des utilisateurs et des chats.
+ 
+ - **Notification.jsx**
+ Affiche les notifications toast utilisant react-toastify pour une expérience utilisateur améliorée.
 
 
 **Dossier src/lib**
