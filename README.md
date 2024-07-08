@@ -43,14 +43,17 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
    fonction utilitaire pour télécharger des fichiers via Firebase Storage, utilisée notamment pour l'enregistrement d'avatars et l'envoi d'images dans les conversations.
 
 **OBJECTIF DU PROJET**
+
 **react_app** démontre comment construire une application moderne de messagerie avec **React.js** et **Firebase**, en mettant l'accent sur la sécurité, la réactivité et la facilité d'utilisation. L'utilisation de Firebase permet une intégration simple des fonctionnalités backend nécessaires à une application de messagerie interactive et performante.
 
 **PREREQUIS**
+
 Pour utiliser et tester l'application localement, assurez-vous d'avoir **Node.js** installé sur votre machine.
 
 **INSTALLATION ET UTILISATION**
+
 Clonez ce repository sur votre machine locale.
 Dans le répertoire racine du projet, exécutez **npm install** pour installer toutes les dépendances nécessaires.
 Configurez votre projet Firebase en suivant les instructions dans **src/lib/firebase.js**.
 Pour démarrer l'application en mode développement, exécutez **npm start**.
-Ouvrez votre navigateur et accédez à **http://localhost:5173**`http://localhost:5173` pour voir l'application en action.
+Ouvrez votre navigateur et accédez à **http://localhost:5173** pour voir l'application en action.
