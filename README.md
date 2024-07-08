@@ -7,7 +7,7 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
 
 **Dossier src/components** : Chaque composant est structuré avec un fichier JSX et un fichier CSS pour le style, facilitant la maintenance et l'organisation du code.
 
-  **Principaux composants**
+    **Principaux composants**
 
     **Chat.jsx**
     Gère l'affichage des messages de la conversation en temps réel et permet aux utilisateurs d'envoyer de nouveaux messages. Utilise Firebase Firestore pour stocker et récupérer les messages, et offre des fonctionnalités comme l'ajout d'emojis et d'images aux messages.
@@ -31,17 +31,17 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
 
 **Dossier src/lib**
 
-**chatStore.js**
-Utilise Zustand pour gérer l'état du chat, y compris les vérifications de blocage des utilisateurs.
-
-**userStore.js**
-Gère l'état global de l'utilisateur en utilisant Firebase Firestore pour récupérer et mettre à jour les informations utilisateur.
-
-**firebase.js**
-Initialise et configure Firebase pour l'application React, incluant l'authentification sécurisée, la base de données Firestore pour le stockage des messages et des utilisateurs, ainsi que le stockage Firebase pour l'enregistrement des fichiers.
-
-**upload.js**
-Fonction utilitaire pour télécharger des fichiers via Firebase Storage, utilisée notamment pour l'enregistrement d'avatars et l'envoi d'images dans les conversations.
+   **chatStore.js**
+   Utilise Zustand pour gérer l'état du chat, y compris les vérifications de blocage des utilisateurs.
+   
+   **userStore.js**
+   Gère l'état global de l'utilisateur en utilisant Firebase Firestore pour récupérer et mettre à jour les informations utilisateur.
+   
+   **firebase.js**
+   Initialise et configure Firebase pour l'application React, incluant l'authentification sécurisée, la base de données Firestore pour le stockage des messages et des utilisateurs, ainsi que le stockage Firebase pour l'enregistrement des fichiers.
+   
+   **upload.js**
+   Fonction utilitaire pour télécharger des fichiers via Firebase Storage, utilisée notamment pour l'enregistrement d'avatars et l'envoi d'images dans les conversations.
 
 **OBJECTIF DU PROJET**
 react_app démontre comment construire une application moderne de messagerie avec React.js et Firebase, en mettant l'accent sur la sécurité, la réactivité et la facilité d'utilisation. L'utilisation de Firebase permet une intégration simple des fonctionnalités backend nécessaires à une application de messagerie interactive et performante.
