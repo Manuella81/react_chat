@@ -16,22 +16,22 @@ Bienvenue dans **react_app**, une application fictive de messagerie construite a
  affiche la politique de confidentialité et les photos partagées dans la conversation en cours. Inclut une fonctionnalité pour bloquer/débloquer un utilisateur dans la conversation via Firebase Firestore.
  
  - **Login.jsx:**
- gère l'authentification des utilisateurs à l'application. Utilise Firebase pour les opérations d'inscription (createUserWithEmailAndPassword) et de connexion (signInWithEmailAndPassword), ainsi que Firestore pour la gestion des données utilisateur.
+ gère l'authentification des utilisateurs à l'application. Utilise Firebase pour les opérations d'inscription (**createUserWithEmailAndPassword**) et de connexion (**signInWithEmailAndPassword**), ainsi que Firestore pour la gestion des données utilisateur.
  
  - **List.jsx:**
- un conteneur pour les sous-composants UserInfo et ChatList. ChatList.jsx affiche en temps réel la liste des chats de l'utilisateur.
+ un conteneur pour les sous-composants UserInfo et ChatList. **ChatList.jsx** affiche en temps réel la liste des chats de l'utilisateur et **userinfo.jsx** gère l'affichage des informations de l'utilisateur connecté. .
  
  - **AddUser.jsx:**
  permet aux utilisateurs de rechercher et d'ajouter d'autres utilisateurs dans l'application, en utilisant Firebase Firestore pour la gestion des utilisateurs et des chats.
  
  - **Notification.jsx:**
- affiche les notifications toast utilisant react-toastify pour une expérience utilisateur améliorée.
+ affiche les notifications toast utilisant **react-toastify** pour une expérience utilisateur améliorée.
 
 
 **Dossier src/lib**
 
    - **chatStore.js:**
-   utilise Zustand pour gérer l'état du chat, y compris les vérifications de blocage des utilisateurs.
+   utilise **Zustand** pour gérer l'état du chat, y compris les vérifications de blocage des utilisateurs.
    
    - **userStore.js:**
    gère l'état global de l'utilisateur en utilisant Firebase Firestore pour récupérer et mettre à jour les informations utilisateur.
