@@ -1,4 +1,5 @@
 import "./detail.css";
+//Ce code importe des instances du service d'authentification (auth) et de la base de données Firestore (db) à partir d'un fichier de configuration Firebase situé dans ../../lib/firebase.
 import { auth, db } from "../../lib/firebase";
 import { useChatStore } from "../../lib/chatStore";
 import { useUserStore } from "../../lib/userStore";
@@ -66,11 +67,11 @@ const messagesWithImg = chat?.messages.filter(message => message.img);
 
   return (
     <div className='detail'>
-      <div className="user">
+      {/*<div className="user">
         <img src={user?.avatar || "./avatar.png"} alt="" />
         <h2>{user?.username}</h2>
         <p>Lorem, ipsum dolor sit amet.</p>
-      </div>
+      </div>*/}
       <div className="info">
         {/*<div className="option">
           <div className="title">

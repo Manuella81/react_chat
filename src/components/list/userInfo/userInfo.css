@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    display: block;
 
     .user{
         display: flex;
@@ -28,5 +29,16 @@
         }
     }
 
+    
+}
+
+@media (max-width: 768px) {
+
+    .userInfo {
+        &.hide-on-conversation {
+            display: none; /* Masque userInfo sur la version mobile lorsque chat.chatId n'est pas null */
+        }
+    }
+    
     
 }

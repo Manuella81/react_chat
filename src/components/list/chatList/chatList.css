@@ -1,7 +1,8 @@
 .chatList{
     flex: 1;
     overflow-y: scroll;
-    
+    display: block;
+
     .search{
         display: flex;
         align-items: center;
@@ -72,7 +73,21 @@
             };
         }
     }
+    
+
 }
+
+@media (max-width: 768px) {
+
+    .chatList {
+        &.hide-on-conversation {
+            display: none; /* Masque chatList sur la version mobile lorsque chat.chatId n'est pas null */
+        }
+    }
+    
+    
+}
+
 
 /*personnalisation de ma schrollBar*/
 /* Pour WebKit (Chrome, Safari, Edge) */

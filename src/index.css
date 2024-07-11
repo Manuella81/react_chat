@@ -32,3 +32,28 @@ body{
   border-radius: 10px;
   background-color: rgba(17, 25, 40, 0.9);
 }
+
+@media screen and (max-width: 1024px) {
+  /* Styles pour les tablettes et iPad Air en mode paysage */
+  .container{
+    width: 95vw;
+    height: 95vh;
+    overflow: hidden; 
+  }
+}
+
+@media screen and (max-width: 768px){
+  body{
+    height: 100%;
+  }
+  .container{
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column; 
+    /*height: 100%;
+    min-height: 100vh;*/
+  }
+}
+
+
+

@@ -1,7 +1,6 @@
 .detail{
-    flex: 1;
     overflow-y: scroll;
-    .user{
+    /*.user{
         padding: 30px 20px;
         display: flex;
         flex-direction: column;
@@ -15,7 +14,18 @@
             border-radius: 50%;
             object-fit: cover;
         }
-    }
+    }*/
+
+    background-color: rgba(0, 0, 0, 0.7);/* Fond semi-transparent pour l'arrière-plan */
+    height: 100%; 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    
+
+    
 
     .info{
         padding: 20px;
@@ -24,6 +34,8 @@
         gap: 25px;
 
         .option{
+            width: 70%;
+            margin: auto;
 
             .title{
                 display: flex;
@@ -106,6 +118,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 40%;
+            margin: auto;
+           
 
             &:hover{
                 background-color: rgba(220, 20, 60, 0.796);
@@ -118,6 +133,23 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px){
+    .detail {
+        .user {
+            display: none;
+        }
+
+        .info{
+            .option{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
 
 /*personnalisation de ma schrollBar*/
 /* Pour WebKit (Chrome, Safari, Edge) */

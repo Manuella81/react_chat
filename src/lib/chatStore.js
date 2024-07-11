@@ -2,8 +2,7 @@ import { create } from 'zustand';
 import { useUserStore } from "./userStore";
 
 
-
-//création d'un store avec Zustand pour gérer l'état utilisateur
+//Ce store useChatStore permet de gérer l'état du chat et les vérifications de blocage des utilisateurs de manière centralisée. Les fonctions changeChat et changeBlock permettent de manipuler l'état en fonction des actions de l'utilisateur, tout en respectant les règles de blocage.
 export const useChatStore = create((set) => ({
   chatId: null,
   user: null,
@@ -44,7 +43,16 @@ export const useChatStore = create((set) => ({
   //cette fonction changeBlock est conçue pour inverser l'état de la propriété isReceiverBlocked dans le hook d'état. À chaque appel de changeBlock, elle met à jour l'état en changeant la valeur de isReceiverBlocked pour l'inverser par rapport à sa valeur actuelle. 
   changeBlock: () => {
     set(state=>({...state, isReceiverBlocked: !state.isReceiverBlocked }))
-  }
+  },
+
+  resetChat: () => {
+    set({
+      chatId: null,
+      user: null,
+      isCurrentUserBlocked: false,
+      isReceiverBlocked: false,
+    });
+  },
 
   
 }));
