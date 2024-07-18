@@ -1,4 +1,4 @@
-// Import des hooks React et des dépendances nécessaires
+//Import des hooks React et des dépendances nécessaires
 import { useState, useRef, useEffect } from "react";
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
@@ -8,10 +8,15 @@ import { useChatStore } from "../../lib/chatStore";
 import { useUserStore } from "../../lib/userStore";
 import upload from '../../lib/upload';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
+import { faPaperPlane, faFile } from "@fortawesome/free-regular-svg-icons";
 import Detail from "../detail/Detail"; // Import du composant Detail
-import { faCalendarXmark } from "@fortawesome/free-regular-svg-icons/faCalendarXmark";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons/faCircleXmark";
+
+
+// Fonction pour vérifier si un fichier est une image
+const isImageFile = (file) => {
+    const imageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/bmp', 'image/gif'];
+    return imageTypes.includes(file.type);
+};
 
 // Composant principal Chat
 const Chat = () => {
@@ -85,6 +90,7 @@ const Chat = () => {
                     text,
                     createdAt: new Date(),
                     ...(imgUrl && { img: imgUrl }), // Ajoute l'URL de l'image si disponible
+                    ...(img.file && !isImageFile(img.file) && { fileName: img.file.name }) // Ajoute le nom du fichier si ce n'est pas une image
                 }),
             });
 
@@ -135,7 +141,6 @@ const Chat = () => {
         setShowDetail(!showDetail);
     };
 
-
     // Rendu du composant Chat
     return (
         <div className="chat">
@@ -164,21 +169,60 @@ const Chat = () => {
                     /* "?" est un opérateur de chaînage optionnel pour éviter les erreurs si message est null ou undefined */
                     <div className={message.senderId === currentUser?.id ? "message own" : "message"} key={message?.createdAt}>
                         <div className="texts">
-                            {/* Affichage de l'image si le message contient une image */}
-                            {message.img && <img src={message.img} alt="" />}
+                            {/* Affichage de l'image ou du fichier si le message contient une image ou un fichier*/}
+                            {!message.fileName && message.img && <img src={message.img} alt="" />}
+
+                            {message.fileName && (
+                                <div>
+                                    <FontAwesomeIcon icon={faFile} className="file-icon"/>
+                                    <span>{message.fileName}</span>
+                                </div>
+                            )}
                             <p>{message.text}</p> {/* Affichage du texte du message */}
+
                         </div>
                     </div>
                 ))}
                 {/* Affichage de l'image sélectionnée avant l'envoi */}
-                {img.url && <div className="message own">
-                    <div className="texts">
-                        <img src={img.url} alt="" />
+                {img.url && isImageFile(img.file) && (
+                    <div className="message own">
+                        <div className="texts">
+                            <img src={img.url} alt="" />
+                        </div>
                     </div>
-                </div>}
+                )}
+                {img.url && !isImageFile(img.file) && (
+                    <div className="message own">
+                        <div className="texts">
+                            <div className="file-message">
+                                <FontAwesomeIcon icon={faFile} />
+                                <span>{img.file.name}</span>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 {/* Référence pour le défilement automatique */}
                 <div ref={endRef} className="endRef"></div>
             </div>
+
+            {/**{img.url && isImageFile(img.file) && (
+                    <div className="message own">
+                        <div className="texts">
+                            <img src={img.url} alt="" />
+                        </div>
+                    </div>
+                )}
+                {img.url && !isImageFile(img.file) && (
+                    <div className="message own">
+                        <div className="texts">
+                            <div className="file-message">
+                                <FontAwesomeIcon icon={faFile} />
+                                <span>{img.file.name}</span>
+                            </div>
+                        </div>
+                    </div>
+                )} */}
+
             <div className="bottom">
                 <div className="icons">
                     {/* Bouton pour sélectionner un fichier (image) */}

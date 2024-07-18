@@ -41,6 +41,7 @@
                     color: #a5a5a5;
                 }
 
+
                 /*
                 .pdf-preview {
                     background-color: #f0f0f0;
@@ -144,6 +145,11 @@
 
                 span{
                     font-size: 13px;
+                }
+
+                .file-icon {
+                    font-size: 1.5rem; 
+                    padding-right: 10px;
                 }
             }
         }

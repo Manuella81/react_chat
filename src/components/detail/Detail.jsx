@@ -5,6 +5,8 @@ import { useChatStore } from "../../lib/chatStore";
 import { useUserStore } from "../../lib/userStore";
 import { arrayRemove, arrayUnion, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
 
 
 const Detail = () => {
@@ -149,7 +151,7 @@ const messagesWithImg = chat?.messages.filter(message => message.img);
         </div>
         <div className="option">
           <div className="title" onClick={() => toggleSection('photos')}>
-            <span>Photos partagées</span>
+            <span>Fichiers partagées</span>
             <img src="./arrowDown.png" alt="Toggle Photos" />
           </div>
           {/**Ajoute la classe "open" à la div uniquement si openSection est égal à 'photos'. Sinon, ajoute une chaîne vide */}
@@ -158,20 +160,34 @@ const messagesWithImg = chat?.messages.filter(message => message.img);
             {messagesWithImg?.map((oneImg, index) => (
               <div key={index} className="photoItem">
                 <div className="photoDetail">
-                  <img src={oneImg.img} alt={`Photo ${index + 1}`} />
-                  <span>Photo_{index + 1}.png</span>
+                  {oneImg.img && !oneImg.fileName? (
+                    <img src={oneImg.img} alt={`Photo ${index + 1}`} />
+                  ) : (
+                    <FontAwesomeIcon icon={faFile} className="file-icon"/>
+                  )}
+                  {oneImg.fileName ? (
+                    <span>{oneImg.fileName}</span>
+                  ) : (
+                    <span>Photo_{index + 1}.png</span>
+                  )}
                 </div>
-                <img src="./download.png" alt="Download" className="icon" />
+                {oneImg.img && (
+                  <a href={oneImg.img} download={oneImg.fileName || `Photo_${index + 1}.png`} target="_blank" rel="noopener noreferrer">
+                    <img src="./download.png" alt="Download" className="icon" />
+                  </a>
+                )}
               </div>
             ))}
+
+
           </div>
         </div>
-        <div className="option">
+        {/*<div className="option">
           <div className="title">
             <span>Fichiers partagés</span>
             <img src="./arrowUp.png" alt="" />
           </div>
-        </div>
+        </div>*/}
         <button onClick={handleBlock}>
           {isCurrentUserBlocked 
             ? "Vous êtes bloqué" 
